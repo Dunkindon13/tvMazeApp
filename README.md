@@ -1,27 +1,25 @@
-# TvMazeApp
+# TV Maze App V2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+This project is based on the TVMAze API, using Angular as the framework and Angular material to stylize. The project features a search bar that can filter through shows by season, episode and history.
+See https://www.tvmaze.com/api for a more in-depth look at the TVMaze API.
 
-## Development server
+## Please Note
+This is the 2nd version of the app, the original one was abandoned due to certain issues. A large part of the code from the 1st version was put in here.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features Below
 
-## Code scaffolding
+## Search Bar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Created a search bar to filter through shows.
 
-## Build
+## Seasons
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Can filter by seasons.
 
-## Running unit tests
+## Episodes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Can filter by episodes.
 
-## Running end-to-end tests
+### Need to continue writing descriptions as the project comes along.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+More needs to be written here.
