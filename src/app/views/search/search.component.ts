@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {TvMazeService} from '../../models/tv-guide.service';
-import {Show} from '../../models/shows.service';
+import {TvGuideService} from '../../models/tv-guide.service';
+import {ShowsComponent} from '../shows/shows.component';
 
 @Component({
   selector: 'app-search',
@@ -9,10 +9,10 @@ import {Show} from '../../models/shows.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  shows$: Observable<Show[]>;
+  shows$: Observable<ShowsComponent[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private tvMazeService: TvMazeService) {
+  constructor(private tvGuideService: TvGuideService) {
   }
 
   ngOnInit() {
