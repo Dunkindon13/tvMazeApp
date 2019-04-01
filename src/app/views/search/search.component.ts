@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {TvMazeService} from '../../models/services.service';
+import {TvMazeService} from '../../models/tv-guide.service';
 import {Show} from '../../models/shows.service';
 
 @Component({
