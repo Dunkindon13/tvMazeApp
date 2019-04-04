@@ -1,3 +1,35 @@
-<p>
-  shows works!
-</p>
+<mat-toolbar color="primary">
+  <mat-form-field class="searchBox">
+    <input matInput type="text" name="search" [(ngModel)]="search" placeholder="Please Enter A Show">
+  </mat-form-field>
+  <button mat-button (click)="searchShows()">Search Shows</button>
+</mat-toolbar>
+
+
+<!-- If there is such a show base on the search, add all of the class's properties that are listed in the Show class-->
+<mat-accordion *ngIf="shows">
+  <mat-expansion-panel *ngFor="let show of shows">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h4 [innerHTML]="'Show Name: ' + show.show.name"></h4>
+      </mat-panel-title>
+      <mat-panel-description>
+        <h4 [innerHTML]="'Premiered On: ' + shows.show.premiered"></h4>
+      </mat-panel-description>
+      <mat-panel-description>
+        <h4 [innerHTML]="'Status: ' + shows.show.status"></h4>
+      </mat-panel-description>
+      <mat-panel-description>
+        <h4 [innerHTML]="'Website: ' + show.show.website"></h4>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <ng-template matExpansionPanelContent>
+      <img [src]="show.show.image.medium">
+      <span [innerHTML]="show.show.summary"></span>
+      <h4 [innerHTML]="'Show language: ' + show.show.language"></h4>
+      <button mat-flat-button color="primary" (click)="searchSeasons(show)">Show Seasons</button>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>

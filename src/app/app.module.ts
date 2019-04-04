@@ -1,19 +1,27 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchComponent } from './views/search/search.component';
-import { SeasonsComponent } from './views/seasons/seasons.component';
-import { ShowsComponent } from './views/shows/shows.component';
-import { EpisodesComponent } from './views/episodes/episodes.component';
-import {MatAutocompleteModule, MatIconModule, MatInputModule, MatOptionModule} from '@angular/material';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SeasonsComponent} from './views/seasons/seasons.component';
+import {ShowsComponent} from './views/shows/shows.component';
+import {EpisodesComponent} from './views/episodes/episodes.component';
+import {FormsModule} from '@angular/forms';
+import {
+  MatAutocompleteModule, MatButtonModule,
+  MatCardModule, MatExpansionModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatOptionModule,
+  MatTableModule, MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
     SeasonsComponent,
     ShowsComponent,
     EpisodesComponent
@@ -22,12 +30,21 @@ import {MatAutocompleteModule, MatIconModule, MatInputModule, MatOptionModule} f
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
     MatInputModule,
     MatOptionModule,
     MatAutocompleteModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatCardModule,
+    MatListModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

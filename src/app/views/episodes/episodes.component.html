@@ -1,3 +1,46 @@
-<p>
-  episodes works!
-</p>
+<div mat-card-title>
+  Show ID: {{showId}}
+</div>
+
+
+<!--Once the show id is obtained get that show's seasons and the episodes of each season-->
+
+<div *ngIf="episodes">
+  <br>
+  <mat-list *ngFor="let season of seasons" (click)="showEpisodes(seasons)">
+    <h3 mat-subheader>
+      Seasons {{seasons.number}}</h3>
+
+    <!--Output episodes for a season-->
+    <div *ngIf="clickFalse && seasons.number==seasonClicked">
+       <span *ngFor="let episodes of episodes">
+         <span *ngIf="episodes.season==seasons.number">
+           <mat-list-item>
+             {{episodes.name}}
+           </mat-list-item>
+         </span>
+       </span>
+
+    </div>
+
+  </mat-list>
+</div>
+
+Current Time: {{" " + time}} <br><br>
+{{nextEp}}<br><br>
+
+
+<h3><u>Send Season ID Method</u></h3>
+<div *ngIf="seasons">
+  <br>
+
+  <div *ngFor="let season of seasons" (click)="showEpisodes(season)" class="border rounded">
+    Season {{seasons.number}}
+    <div *ngIf="clickFalse && seasons.number==seasonClicked">
+
+
+      <app-seasons [seasonId]="seasons.id"></app-seasons>
+    </div>
+  </div>
+
+</div>

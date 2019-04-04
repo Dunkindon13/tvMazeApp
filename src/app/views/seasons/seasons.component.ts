@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {TvGuideService} from '../../models/tv-guide.service';
+import {Seasons} from '../../models/Seasons';
+
 
 @Component({
   selector: 'app-seasons',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeasonsComponent implements OnInit {
 
-  constructor() { }
+  @Input() public seasonId;
+  seasons: Seasons[];
 
-  ngOnInit() {
+
+  constructor(private Service: TvGuideService) {
   }
 
+  ngOnInit() {
+    // Subscribe to get the episodes of the season
+    this.Service.getSeasons(this.seasonId).subscribe(res => {
+      this.seasons = res;
+    });
+  }
 }
+

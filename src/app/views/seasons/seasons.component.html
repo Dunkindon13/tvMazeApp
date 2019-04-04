@@ -1,3 +1,15 @@
-<p>
-  seasons works!
-</p>
+<div mat-card-title>
+  Season ID: {{seasonId}}
+</div>
+
+<!--Once that have the season id get the episodes of that season -->
+
+<div *ngIf="seasons">
+  <mat-card *ngFor="let season of seasons">
+    <mat-card-title>{{season.number}}.{{season.name}}</mat-card-title>
+    <mat-card-content>
+      <b>Date: {{season.dateAired}}</b><br>
+      {{season.summary}}
+    </mat-card-content>
+  </mat-card>
+</div>

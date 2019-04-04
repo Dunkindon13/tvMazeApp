@@ -1,5 +1,4 @@
 import {Seasons} from './Seasons';
-import {Episodes} from './Episodes';
 
 export class Shows {
   id: number;
@@ -11,8 +10,6 @@ export class Shows {
   website: string;
   image: { medium: string };
   summary: string;
-  prevEp: Episodes;
-  nextEp: Episodes;
 
   constructor(args?) {
     if (args) {
