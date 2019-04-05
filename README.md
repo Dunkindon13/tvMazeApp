@@ -6,7 +6,7 @@ See https://www.tvmaze.com/api for a more in-depth look at the TVMaze API.
 ## Please Note
 This is the 2nd version of the app, the original one was abandoned due to certain issues. A large part of the code from the 1st version was put in here.
 
-## Features Below
+# Features Below
 
 ## Search Bar
 
@@ -14,12 +14,12 @@ Created a search bar to filter through shows.
 
 ## Seasons
 
-Can filter by seasons.
+Can filter by seasons once inside a show.
 
 ## Episodes
 
-Can filter by episodes.
+Can look through each episode summary and each episode and its individual information when looking at a season of a given show.
 
-### Need to continue writing descriptions as the project comes along.
+### Other Features
 
-More needs to be written here.
+No history done. Ability to see next and previous episodes, as well as summaries of episodes, the given website for a show, its current status (running/discontinued), language and a picture/thumbnail of the show.
