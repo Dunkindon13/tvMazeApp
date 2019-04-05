@@ -6,8 +6,7 @@ export class Episodes {
   dateAired: Date;
   runtime: string;
   summary: string;
-  nextEp: string;
-  prevEp: string;
+
 
   constructor(args?) {
     if (args) {
@@ -18,8 +17,6 @@ export class Episodes {
       this.dateAired = args.dateAired;
       this.runtime = args.runtime;
       this.summary = args.summary;
-      this.nextEp = args.nextEp;
-      this.prevEp = args.nextEp;
     }
   }
 }

@@ -1,4 +1,5 @@
 import {Seasons} from './Seasons';
+import {Episodes} from './Episodes';
 
 export class Shows {
   id: number;
@@ -10,6 +11,10 @@ export class Shows {
   website: string;
   image: { medium: string };
   summary: string;
+  prevEpUrl: string;
+  nextEpUrl: string;
+  prevEp: Episodes;
+  nextEp: Episodes;
 
   constructor(args?) {
     if (args) {
@@ -22,6 +27,17 @@ export class Shows {
       this.website = args.website;
       this.image = args.image;
       this.summary = args.summary;
+      this.prevEpUrl = (args._links.previousepisode) ? args._links.previousepisode.href : null;
+      this.nextEpUrl = (args._links.nextepisode) ? args._links.nextepisode.href : null;
     }
   }
+
+  setPrevEp(Ep: Episodes) {
+    this.prevEp = Ep;
+  }
+
+  setNextEp(Ep: Episodes) {
+    this.nextEp = Ep;
+  }
 }
+

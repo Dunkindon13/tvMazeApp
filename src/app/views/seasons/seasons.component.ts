@@ -1,6 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TvGuideService} from '../../models/tv-guide.service';
 import {Seasons} from '../../models/Seasons';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -10,18 +11,26 @@ import {Seasons} from '../../models/Seasons';
 })
 export class SeasonsComponent implements OnInit {
 
-  @Input() public seasonId;
+  id: string;
   seasons: Seasons[];
 
 
-  constructor(private Service: TvGuideService) {
+  constructor(private Service: TvGuideService, private route: ActivatedRoute) {
+    // Getting a snapshot of the route to get seasonId
+    this.id = this.route.snapshot.paramMap.get('id');
+
+    this.Service.getSeasons(this.id).subscribe(
+      res => {
+        this.seasons = [];
+        res.map((item) => {
+          this.seasons.push(new Seasons(item));
+        });
+      }
+    );
   }
+
 
   ngOnInit() {
-    // Subscribe to get the episodes of the season
-    this.Service.getSeasons(this.seasonId).subscribe(res => {
-      this.seasons = res;
-    });
   }
-}
 
+}

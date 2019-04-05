@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', component: ShowsComponent},
   {path: '**', component: ShowsComponent},
   {path: 'shows', component: ShowsComponent},
-  {path: 'episodes/:id', component: SeasonsComponent}
+  {path: 'seasons/:id', component: SeasonsComponent}
 ];
 
 @NgModule({

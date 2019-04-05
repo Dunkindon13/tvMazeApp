@@ -28,4 +28,8 @@ export class TvGuideService {
     return this.http.get<Episodes[]>('http://api.tvmaze.com/shows/' + tvUrl + '/episodes');
   }
 
+  getPrevNextEps(tvUrl): Observable<any> {
+    return this.http.get<any>(tvUrl);
+  }
+
 }
